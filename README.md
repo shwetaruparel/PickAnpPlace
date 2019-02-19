@@ -7,7 +7,7 @@
 [image_3]: ./images/diff_img.jpg
 [image_4]: ./images/sim_conf.jpg
 [image_5]: ./images/auto_run.jpg
-----
+--
 ### Kinematic Analysis
 #### Explored Forward Kinematics demo and evaluated the kr210.urdf.xacro file to perform kinematic analysis of Kuka KR210 robot and to derive its DH parameters.
 
