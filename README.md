@@ -1,8 +1,8 @@
 # Robotic Arm : Pick and Place Project
 
 [//]: # (Image References)
-[image_1]: ./images/JointsLinks.jpg
-[image_2]: ./images/Joints_links.jpg
+[image_1]: ./images/JointsLinks.png
+[image_2]: ./images/Joints_links.png
 
 --
 ### Kinematic Analysis
