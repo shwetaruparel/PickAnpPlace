@@ -23,6 +23,7 @@ Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
 6->EE| 0      | 0     | 0.303| 0
 
 #### Individual Transform Matrices about each Joint
+
 T0_1 :: Matrix([[cos(q1), -sin(q1), 0, 0], 
                 [sin(q1), cos(q1), 0, 0], 
                 [0, 0, 1, 0.750000000000000], 
@@ -32,6 +33,7 @@ T1_2 :: Matrix([[cos(q2 - 0.5*pi), -sin(q2 - 0.5*pi), 0, 0.350000000000000],
                 [0, 0, 1, 0], 
                 [-sin(q2 - 0.5*pi), -cos(q2 - 0.5*pi), 0, 0], 
                 [0, 0, 0, 1]])
+---
 T2_3 :: Matrix([[cos(q3), -sin(q3), 0, 1.25000000000000], 
                 [sin(q3), cos(q3), 0, 0], 
                 [0, 0, 1, 0], 
