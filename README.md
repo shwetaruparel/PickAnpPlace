@@ -62,5 +62,9 @@ T6_EE :: Matrix([[1, 0, 0, 0],
 #### Decouple Inverse Kinematics Problem and derive equations to calculate all individual joint angles.
 
 
+## Project Implementation
+
+
+
 
                   
