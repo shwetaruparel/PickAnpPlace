@@ -12,6 +12,8 @@
 ### Kinematic Analysis
 #### Explored Forward Kinematics demo and evaluated the kr210.urdf.xacro file to perform kinematic analysis of Kuka KR210 robot and to derive its DH parameters.
 
+![Joints and Links][image1]
+
 Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
 --- | --- | --- | --- | ---
 0->1 | 0      | 0     | 0.75 | q1
@@ -59,6 +61,7 @@ T6_EE :: Matrix([[1, 0, 0, 0],
                   [0, 0, 1, 0.303000000000000], 
                   [0, 0, 0, 1]])
                   
-                  
-                  
+#### Decouple Inverse Kinematics Problem and derive equations to calculate all individual joint angles.  
+
+
                   
