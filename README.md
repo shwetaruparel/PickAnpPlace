@@ -3,7 +3,7 @@
 [//]: # (Image References)
 [image_1]: ./images/JointsLinks.png
 [image_2]: ./images/Joints_Links.png
-[image_3]: ./images/Joints_Links.png
+[image_3]: ./images/GenTM.png
 
 --
 ## Kinematic Analysis
@@ -23,8 +23,9 @@ Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
 5->6 | -pi/2  | 0     | 0    | q6
 6->EE| 0      | 0     | 0.303| 0
 
-**** Individual Transform Matrices about each Joint
+#### Individual Transform Matrices about each Joint
 
+1. Individual Transform matrix based on modified DH Parameters 
 T0_1 :: Matrix([[cos(q1), -sin(q1), 0, 0], 
                 [sin(q1), cos(q1), 0, 0], 
                 [0, 0, 1, 0.750000000000000], 
@@ -60,7 +61,9 @@ T6_EE :: Matrix([[1, 0, 0, 0],
                   [0, 0, 1, 0.303000000000000], 
                   [0, 0, 0, 1]])
                   
-***Homogeneous transform matrix from base_link to gripper_link using only the position and orientation of the gripper_link
+2.Homogeneous transform matrix from base_link to gripper_link using only the position and orientation of the gripper_link
+  Generalised Transform Matrix
+  ![Joints and links from classroom][image_3]
 
 
 #### Decouple Inverse Kinematics Problem and derive equations to calculate all individual joint angles.
