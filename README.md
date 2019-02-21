@@ -4,6 +4,7 @@
 [image_1]: ./images/JointsLinks.png
 [image_2]: ./images/Joints_Links.png
 [image_3]: ./images/transmatrice.png
+[image_4]: ./images/homo-xform-2.png
 
 --
 ## Kinematic Analysis
@@ -63,7 +64,10 @@ Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
                   
 2. Homogeneous transform matrix from base_link to gripper_link using only the position and orientation of the gripper_link
     Generalised Transform Matrix
-  ![Joints and links from classroom][image_3]
+  ![Generalised Xform][image_3]
+  ![Homo Xform][image_4]
+  
+  
 
 
 #### Decouple Inverse Kinematics Problem and derive equations to calculate all individual joint angles.
