@@ -3,6 +3,7 @@
 [//]: # (Image References)
 [image_1]: ./images/JointsLinks.png
 [image_2]: ./images/Joints_Links.png
+[image_3]: ./images/Joints_Links.png
 
 --
 ### Kinematic Analysis
@@ -59,6 +60,9 @@ T6_EE :: Matrix([[1, 0, 0, 0],
                   [0, 0, 1, 0.303000000000000], 
                   [0, 0, 0, 1]])
                   
+***Homogeneous transform matrix from base_link to gripper_link using only the position and orientation of the gripper_link
+---
+
 #### Decouple Inverse Kinematics Problem and derive equations to calculate all individual joint angles.
 
 
