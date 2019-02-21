@@ -1,13 +1,8 @@
 # Robotic Arm : Pick and Place Project
 
 [//]: # (Image References)
-
-[image_0]: ./images/test_dataset.jpg
 [image_1]: ./images/JointsLinks.jpg
-[image_2]: ./images/obs_map.jpg
-[image_3]: ./images/diff_img.jpg
-[image_4]: ./images/sim_conf.jpg
-[image_5]: ./images/auto_run.jpg
+
 --
 ### Kinematic Analysis
 #### Explored Forward Kinematics demo and evaluated the kr210.urdf.xacro file to perform kinematic analysis of Kuka KR210 robot and to derive its DH parameters.
