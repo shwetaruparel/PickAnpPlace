@@ -2,7 +2,7 @@
 
 [//]: # (Image References)
 [image_1]: ./images/JointsLinks.png
-[image_2]: ./images/Joints_links.png
+[image_2]: ./images/Joints_Links.png
 
 --
 ### Kinematic Analysis
@@ -10,7 +10,7 @@
 
 ![Joints and Links][image_1]
 
-![alt_text][image_2]
+![Joints and links from classroom][image_2]
 
 Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
 --- | --- | --- | --- | ---
