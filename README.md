@@ -3,7 +3,7 @@
 [//]: # (Image References)
 [image_1]: ./images/JointsLinks.png
 [image_2]: ./images/Joints_Links.png
-[image_3]: ./images/GenTM.png
+[image_3]: ./images/transmatrice.png
 
 --
 ## Kinematic Analysis
