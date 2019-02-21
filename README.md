@@ -6,7 +6,7 @@
 [image_3]: ./images/Joints_Links.png
 
 --
-### Kinematic Analysis
+## Kinematic Analysis
 #### Explored Forward Kinematics demo and evaluated the kr210.urdf.xacro file to perform kinematic analysis of Kuka KR210 robot and to derive its DH parameters.
 
 ![Joints and Links][image_1]
