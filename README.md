@@ -3,7 +3,7 @@
 [//]: # (Image References)
 
 [image_0]: ./images/test_dataset.jpg
-[image_1]: ./images/jointslinks.jpg
+[image_1]: ./images/JointsLinks.jpg
 [image_2]: ./images/obs_map.jpg
 [image_3]: ./images/diff_img.jpg
 [image_4]: ./images/sim_conf.jpg
