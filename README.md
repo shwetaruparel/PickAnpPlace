@@ -8,7 +8,7 @@
 [image_5]: ./images/WristCenter.png
 [image_6]: ./images/theta2-3.png
 [image_7]: ./images/PndP1.png
-[image_7]: ./images/PndP2.png
+[image_8]: ./images/PndP2.png
 
 
 ## Kinematic Analysis
