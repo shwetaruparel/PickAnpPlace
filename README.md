@@ -27,6 +27,7 @@ Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
 #### Individual Transform Matrices about each Joint
 
 1. Individual Transform matrix based on modified DH Parameters 
+
   T0_1 :: Matrix([[cos(q1), -sin(q1), 0, 0], 
                 [sin(q1), cos(q1), 0, 0], 
                 [0, 0, 1, 0.750000000000000], 
@@ -67,7 +68,32 @@ Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
   ![Generalised Xform][image_3]
   ![Homo Xform][image_4]
   
+  Position and orientation of the gripper link can be calulated from simulation in ROS. Since these values are returned in quaternions,   we can use the transformations.py module from the TF package and Positions Px Py and Pz from requested pose. The       
+  euler_from_quaternions() method will output the roll, pitch, and yaw values. Wrist Center can be calculated using the following   
   
+  Homogenous Rotaion Matrix 
+
+  R_x = Matrix([    [1,     0,      0,      0],
+                    [0,     cos(r), -sin(r),0],
+                    [0,     sin(r), cos(r), 0],
+                    [0,     0,      0,      1]])
+   r is the value of roll
+   
+   R_y = Matrix([   [cos(p),        0,sin(p),       0],
+                    [0,             1,0,            0],
+                    [-sin(p),       0,cos(p),       0],
+                    [0,             0,0,            1]])
+
+   p is the vale of pitch
+   R_z = Matrix([  [cos(y),-sin(y),0,0],
+                    [sin(y),cos(y), 0,0],
+                    [0,     0,      1,0],
+                    [0,     0,      0,1]])
+
+   y is the value of yaw.
+   
+  Rotaion Matrix for End Effector
+  R_EE = R_z * R_y * R_x
 
 
 #### Decouple Inverse Kinematics Problem and derive equations to calculate all individual joint angles.
