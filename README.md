@@ -7,6 +7,8 @@
 [image_4]: ./images/homo-xform-2.png
 [image_5]: ./images/WristCenter.png
 [image_6]: ./images/theta2-3.png
+[image_7]: ./images/PndP1.png
+[image_7]: ./images/PndP2.png
 
 
 ## Kinematic Analysis
@@ -170,9 +172,7 @@ __Theta2 and Theta3 Calculations__
     theta3 = pi/2 - (angle_b + 0.036)
     
 __Theta 4,5,6 Calculations__
-    
-    __Euler angles from Rotation Matrix__
-    
+      
     theta4 = atan2(R3_6[2,2],-R3_6[0,2])
     
     theta5 = atan2(sqrt(R3_6[0,2]*R3_6[0,2]+R3_6[2,2]*R3_6[2,2]),R3_6[1,2])
@@ -182,6 +182,9 @@ __Theta 4,5,6 Calculations__
 
 ## Project Implementation
 
+![Pick and Place][image_7]
+
+![Pick and Place][image_8]
 
 
 
