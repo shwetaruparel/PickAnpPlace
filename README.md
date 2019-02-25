@@ -5,6 +5,7 @@
 [image_2]: ./images/Joints_Links.png
 [image_3]: ./images/transmatrice.png
 [image_4]: ./images/homo-xform-2.png
+[image_5]: ./images/WristCenter.png
 
 --
 ## Kinematic Analysis
@@ -69,9 +70,21 @@ Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
   ![Homo Xform][image_4]
   
   Position and orientation of the gripper link can be calulated from simulation in ROS. Since these values are returned in quaternions,   we can use the transformations.py module from the TF package and Positions Px Py and Pz from requested pose. The       
-  euler_from_quaternions() method will output the roll, pitch, and yaw values. Wrist Center can be calculated using the following   
+  euler_from_quaternions() method will output the roll, pitch, and yaw values. Wrist Center can be calculated using the following .
   
-  Homogenous Rotaion Matrix 
+  ![Wrist Center][image_5]
+  
+  Where,
+
+  Px, Py, Pz = end-effector positions
+
+  Wx, Wy, Wz = wrist positions
+
+  d6 = from DH table
+
+  _l_ = end-effector length
+
+  Homogenous Rotaion Matrix are defined as
 
   R_x = Matrix([    [1,     0,      0,      0],
                     [0,     cos(r), -sin(r),0],
@@ -98,6 +111,10 @@ Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
   Rotaion Matrix for End Effector
   
   R_EE = R_z * R_y * R_x
+
+  R_EE = R_EE.subs({'r' : roll,'p' : pitch,'y' : yaw})
+
+  Correctional Rotation matrix can be calculated 
 
 
 #### Decouple Inverse Kinematics Problem and derive equations to calculate all individual joint angles.
