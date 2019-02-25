@@ -28,37 +28,37 @@ Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
 
 1. Individual Transform matrix based on modified DH Parameters 
 
-  T0_1 :: Matrix([[cos(q1), -sin(q1), 0, 0], 
+    T0_1 :: Matrix([[cos(q1), -sin(q1), 0, 0], 
                 [sin(q1), cos(q1), 0, 0], 
                 [0, 0, 1, 0.750000000000000], 
                 [0, 0, 0, 1]])
 
-  T1_2 :: Matrix([[cos(q2 - 0.5*pi), -sin(q2 - 0.5*pi), 0, 0.350000000000000], 
+    T1_2 :: Matrix([[cos(q2 - 0.5*pi), -sin(q2 - 0.5*pi), 0, 0.350000000000000], 
                 [0, 0, 1, 0], 
                 [-sin(q2 - 0.5*pi), -cos(q2 - 0.5*pi), 0, 0], 
                 [0, 0, 0, 1]])
 
-  T2_3 :: Matrix([[cos(q3), -sin(q3), 0, 1.25000000000000], 
+    T2_3 :: Matrix([[cos(q3), -sin(q3), 0, 1.25000000000000], 
                 [sin(q3), cos(q3), 0, 0], 
                 [0, 0, 1, 0], 
                 [0, 0, 0, 1]])
 
-  T3_4 :: Matrix([[cos(q4), -sin(q4), 0, -0.0540000000000000], 
+    T3_4 :: Matrix([[cos(q4), -sin(q4), 0, -0.0540000000000000], 
                 [0, 0, 1, 1.50000000000000],
                 [-sin(q4), -cos(q4), 0, 0],
                 [0, 0, 0, 1]])
 
-  T4_5 :: Matrix([[cos(q5), -sin(q5), 0, 0], 
+    T4_5 :: Matrix([[cos(q5), -sin(q5), 0, 0], 
                 [0, 0, -1, 0], 
                 [sin(q5), cos(q5), 0, 0], 
                 [0, 0, 0, 1]])
 
-  T5_6 :: Matrix([[cos(q6), -sin(q6), 0, 0],
+    T5_6 :: Matrix([[cos(q6), -sin(q6), 0, 0],
                 [0, 0, 1, 0], 
                 [-sin(q6), -cos(q6), 0, 0], 
                 [0, 0, 0, 1]])
 
-  T6_EE :: Matrix([[1, 0, 0, 0], 
+    T6_EE :: Matrix([[1, 0, 0, 0], 
                   [0, 1, 0, 0], 
                   [0, 0, 1, 0.303000000000000], 
                   [0, 0, 0, 1]])
@@ -77,22 +77,26 @@ Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
                     [0,     cos(r), -sin(r),0],
                     [0,     sin(r), cos(r), 0],
                     [0,     0,      0,      1]])
-   r is the value of roll
+  
+  r is the value of roll
    
-   R_y = Matrix([   [cos(p),        0,sin(p),       0],
+  R_y = Matrix([   [cos(p),        0,sin(p),       0],
                     [0,             1,0,            0],
                     [-sin(p),       0,cos(p),       0],
                     [0,             0,0,            1]])
 
-   p is the vale of pitch
-   R_z = Matrix([  [cos(y),-sin(y),0,0],
+  
+  p is the vale of pitch
+  
+  R_z = Matrix([  [cos(y),-sin(y),0,0],
                     [sin(y),cos(y), 0,0],
                     [0,     0,      1,0],
                     [0,     0,      0,1]])
 
-   y is the value of yaw.
+  y is the value of yaw.
    
   Rotaion Matrix for End Effector
+  
   R_EE = R_z * R_y * R_x
 
 
