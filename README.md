@@ -163,6 +163,17 @@ Considering a triangle formed between __Joint 2 , Joint 3 and Wrist center__ as 
 
 ![theta2-3][image_6]
 
+__Theta2 and Theta3 Calculations__
+    
+    theta2 = pi/2 - angle_a - atan2(WC[2] - 0.75,sqrt(WC[0]*WC[0] + WC[1]*WC[1])-0.35)
+    
+    theta3 = pi/2 - (angle_b + 0.036)
+    
+__Theta 4,5,6 Calculations__
+    **Euler angles from Rotation Matrix**
+    theta4 = atan2(R3_6[2,2],-R3_6[0,2])
+    theta5 = atan2(sqrt(R3_6[0,2]*R3_6[0,2]+R3_6[2,2]*R3_6[2,2]),R3_6[1,2])
+    theta6 = atan2(-R3_6[1,1],R3_6[1,0])
 
 
 ## Project Implementation
