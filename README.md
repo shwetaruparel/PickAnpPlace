@@ -70,8 +70,7 @@ Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
   ![Generalised Xform][image_3]
   ![Homo Xform][image_4]
   
-  Position and orientation of the gripper link can be calulated from simulation in ROS. Since these values are returned in quaternions,   we can use the transformations.py module from the TF package and Positions Px Py and Pz from requested pose. The        
-  euler_from_quaternions() method will output the roll, pitch, and yaw values. Wrist Center can be calculated using the following .
+  Position and orientation of the gripper link can be calulated from simulation in ROS. Since these values are returned in quaternions,   we can use the transformations.py module from the TF package and use euler_from_quaternions() method to get the roll, pitch, and yaw   values.Position Px, Py, Pz can be calculated from the requested pose.  Wrist Center can be calculated using the following .
   
   ![Wrist Center][image_5]
   
@@ -111,16 +110,16 @@ Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
    
   Rotaion Matrix for End Effector
   
-  R_EE = R_z * R_y * R_x
+  **R_EE = R_z * R_y * R_x
 
-  R_EE = R_EE.subs({'r' : roll,'p' : pitch,'y' : yaw})
+  **R_EE = R_EE.subs({'r' : roll,'p' : pitch,'y' : yaw})
 
   Since URDF model does not follow DH Convention. We will need correctional Matrix as follows
 
-  R_Corr = R_z.subs(y,pi)*R_y.subs(p,-pi/2)
+  **R_Corr = R_z.subs(y,pi)*R_y.subs(p,-pi/2)
   
   Also, Total Homogeneous transform between base_link and Gripper link with correvtion would be
-  T_Total= T6_EE * R_Corr
+  **T_Total= T6_EE * R_Corr
 
 
 #### Decouple Inverse Kinematics Problem and derive equations to calculate all individual joint angles.
@@ -139,7 +138,7 @@ It would use the first three joints to control the position of the wrist center 
 
 We have already seen how to calculate the wrist center positions Wx, Wy, Wz now we need to calculate the values of joint angles.
 
-Once the first three joint variables are known we can calculate the homogenous transform upto the wrist center 0R3 using T0_1 *T1_2*T2_3
+Once the first three joint variables are known, we can calculate the homogenous transform upto the wrist center **0R3 using T0_1 *T1_2*T2_3
 
 Final three Joints(4,5,6) can be calculated by considering the following:
 
@@ -159,10 +158,12 @@ We can substitute the values we calculated for joints 1 to 3 in their respective
 
 R3_6 = inv(R0_3) * Rrpy
 
-Theta 1 is straight forward if we look top down view of robotic arm = atan2(Wy,Wx)
-Considering a triangle formed between Joint 2 , Joint 3 and Wrist center as show in the figure we can find theta 2 and theta 3.
+if we look top down view of robotic arm,**Theta 1 = atan2(Wy,Wx)**
+Considering a triangle formed between **Joint 2 , Joint 3 and Wrist center** as shown in the figure we can find **theta 2 and theta 3**.
 
 ![theta2-3][image_6]
+
+
 
 ## Project Implementation
 
