@@ -70,7 +70,7 @@ Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
   ![Generalised Xform][image_3]
   ![Homo Xform][image_4]
   
-  Position and orientation of the gripper link can be calulated from simulation in ROS. Since these values are returned in quaternions,   we can use the transformations.py module from the TF package and use euler_from_quaternions() method to get the roll, pitch, and yaw   values.Position Px, Py, Pz can be calculated from the requested pose.  Wrist Center can be calculated using the following .
+  Position and orientation of the gripper link can be calulated from simulation in ROS. Since these values are returned in quaternions,   we can use the transformations.py module from the TF package and use __euler_from_quaternions()__ method to get the roll, pitch, and   yaw   values.Position Px, Py, Pz can be calculated from the requested pose.  Wrist Center can be calculated using the following .
   
   ![Wrist Center][image_5]
   
