@@ -69,7 +69,7 @@ Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
   ![Generalised Xform][image_3]
   ![Homo Xform][image_4]
   
-  Position and orientation of the gripper link can be calulated from simulation in ROS. Since these values are returned in quaternions,   we can use the transformations.py module from the TF package and Positions Px Py and Pz from requested pose. The       
+  Position and orientation of the gripper link can be calulated from simulation in ROS. Since these values are returned in quaternions,   we can use the transformations.py module from the TF package and Positions Px Py and Pz from requested pose. The        
   euler_from_quaternions() method will output the roll, pitch, and yaw values. Wrist Center can be calculated using the following .
   
   ![Wrist Center][image_5]
@@ -114,11 +114,33 @@ Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
 
   R_EE = R_EE.subs({'r' : roll,'p' : pitch,'y' : yaw})
 
-  Correctional Rotation matrix can be calculated 
+  Since URDF model does not follow DH Convention. We will need correctional Matrix as follows
+
+  R_Corr = R_z.subs(y,pi)*R_y.subs(p,-pi/2)
+  
+  Also, Total Homogeneous transform between base_link and Gripper link with correvtion would be
+  T_Total= T6_EE * R_Corr
 
 
 #### Decouple Inverse Kinematics Problem and derive equations to calculate all individual joint angles.
 
+Inverse kinematics (IK) is mainly the opposite idea of forwards kinematics. In this case,calculate the joint angles of the manipulatorare calculated based on the pose (i.e., position and orientation) of the end effector.
+
+Research has shown that if either of the following two conditions are satisfied, then the serial manipulator is solvable in closed-form.
+
+1. Three neighboring joint axes intersect at a single point, or
+
+2. Three neighboring joint axes are parallel (which is technically a special case of 1, since parallel lines intersect at infinity)
+
+Kuka KR210 ,six DoF serial manipulator used in the project,has the last three joints to be revolute joints and that satisfy condition 1, such a design is called a spherical wrist and the common point of intersection is called the wrist center. The advantage of such a design is that it kinematically decouples the position and orientation of the end effector. 
+
+It would use the first three joints to control the position of the wrist center while the last three joints would orient the end effector as needed.
+
+We have already seen how to calculate the wrist center positions Wx, Wy, Wz now we need to calculate the values of joint angles.
+
+Once the first joint variables are known we can calculate the hoogenous transform upto the wrist center 0
+3
+​	 R
 
 ## Project Implementation
 
