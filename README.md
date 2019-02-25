@@ -91,7 +91,7 @@ Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
                     [0,     sin(r), cos(r), 0],
                     [0,     0,      0,      1]])
   
-  r is the value of roll
+  __r is the value of roll__
    
   R_y = Matrix([   [cos(p),        0,sin(p),       0],
                     [0,             1,0,            0],
@@ -99,27 +99,27 @@ Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
                     [0,             0,0,            1]])
 
   
-  p is the vale of pitch
+  __p is the vale of pitch__
   
   R_z = Matrix([  [cos(y),-sin(y),0,0],
                     [sin(y),cos(y), 0,0],
                     [0,     0,      1,0],
                     [0,     0,      0,1]])
 
-  y is the value of yaw.
+  __y is the value of yaw.__
    
   Rotaion Matrix for End Effector
   
-  **R_EE = R_z * R_y * R_x
+  __R_EE = R_z * R_y * R_x__
 
-  **R_EE = R_EE.subs({'r' : roll,'p' : pitch,'y' : yaw})
+  __R_EE = R_EE.subs({'r' : roll,'p' : pitch,'y' : yaw})__
 
   Since URDF model does not follow DH Convention. We will need correctional Matrix as follows
 
-  **R_Corr = R_z.subs(y,pi)*R_y.subs(p,-pi/2)
+  __R_Corr = R_z.subs(y,pi)*R_y.subs(p,-pi/2)__
   
   Also, Total Homogeneous transform between base_link and Gripper link with correvtion would be
-  **T_Total= T6_EE * R_Corr
+  __T_Total= T6_EE * R_Corr__
 
 
 #### Decouple Inverse Kinematics Problem and derive equations to calculate all individual joint angles.
@@ -138,13 +138,13 @@ It would use the first three joints to control the position of the wrist center 
 
 We have already seen how to calculate the wrist center positions Wx, Wy, Wz now we need to calculate the values of joint angles.
 
-Once the first three joint variables are known, we can calculate the homogenous transform upto the wrist center **0R3 using T0_1 *T1_2*T2_3***
+Once the first three joint variables are known, we can calculate the homogenous transform upto the wrist center __0R3 using T0_1 *T1_2*T2_3__
 
 Final three Joints(4,5,6) can be calculated by considering the following:
 
 Using the individual DH transforms we can obtain the resultant transform and hence resultant rotation by:
 
-R0_6 = R0_1*R1_2*R2_3*R3_4*R4_5*R5_6
+__R0_6 = R0_1*R1_2*R2_3*R3_4*R4_5*R5_6__
 
 Since the overall RPY (Roll Pitch Yaw) rotation between base_link and gripper_link must be equal to the product of individual rotations between respective links, following holds true:
 
@@ -156,10 +156,10 @@ Rrpy = Homogeneous RPY rotation between base_link and gripper_link as calculated
 
 We can substitute the values we calculated for joints 1 to 3 in their respective individual rotation matrices and pre-multiply both sides of the above equation by inv(R0_3) which leads to:
 
-R3_6 = inv(R0_3) * Rrpy
+__R3_6 = inv(R0_3) * Rrpy__
 
-if we look top down view of robotic arm,**Theta 1 = atan2(Wy,Wx)**
-Considering a triangle formed between **Joint 2 , Joint 3 and Wrist center** as shown in the figure we can find **theta 2 and theta 3**.
+if we look top down view of robotic arm,__Theta 1 = atan2(Wy,Wx)__
+Considering a triangle formed between __Joint 2 , Joint 3 and Wrist center__ as shown in the figure we can find __theta 2 and theta 3__
 
 ![theta2-3][image_6]
 
