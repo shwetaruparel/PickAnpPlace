@@ -8,7 +8,7 @@
 [image_5]: ./images/WristCenter.png
 [image_6]: ./images/theta2-3.png
 
---
+
 ## Kinematic Analysis
 #### Explored Forward Kinematics demo and evaluated the kr210.urdf.xacro file to perform kinematic analysis of Kuka KR210 robot and to derive its DH parameters.
 
@@ -138,7 +138,7 @@ It would use the first three joints to control the position of the wrist center 
 
 We have already seen how to calculate the wrist center positions Wx, Wy, Wz now we need to calculate the values of joint angles.
 
-Once the first three joint variables are known, we can calculate the homogenous transform upto the wrist center **0R3 using T0_1 *T1_2*T2_3
+Once the first three joint variables are known, we can calculate the homogenous transform upto the wrist center **0R3 using T0_1 *T1_2*T2_3***
 
 Final three Joints(4,5,6) can be calculated by considering the following:
 
