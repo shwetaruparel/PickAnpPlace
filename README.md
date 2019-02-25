@@ -6,6 +6,7 @@
 [image_3]: ./images/transmatrice.png
 [image_4]: ./images/homo-xform-2.png
 [image_5]: ./images/WristCenter.png
+[image_6]: ./images/theta2-3.png
 
 --
 ## Kinematic Analysis
@@ -138,9 +139,30 @@ It would use the first three joints to control the position of the wrist center 
 
 We have already seen how to calculate the wrist center positions Wx, Wy, Wz now we need to calculate the values of joint angles.
 
-Once the first joint variables are known we can calculate the hoogenous transform upto the wrist center 0
-3
-​	 R
+Once the first three joint variables are known we can calculate the homogenous transform upto the wrist center 0R3 using T0_1 *T1_2*T2_3
+
+Final three Joints(4,5,6) can be calculated by considering the following:
+
+Using the individual DH transforms we can obtain the resultant transform and hence resultant rotation by:
+
+R0_6 = R0_1*R1_2*R2_3*R3_4*R4_5*R5_6
+
+Since the overall RPY (Roll Pitch Yaw) rotation between base_link and gripper_link must be equal to the product of individual rotations between respective links, following holds true:
+
+R0_6 = Rrpy
+
+where,
+
+Rrpy = Homogeneous RPY rotation between base_link and gripper_link as calculated above.
+
+We can substitute the values we calculated for joints 1 to 3 in their respective individual rotation matrices and pre-multiply both sides of the above equation by inv(R0_3) which leads to:
+
+R3_6 = inv(R0_3) * Rrpy
+
+Theta 1 is straight forward if we look top down view of robotic arm = atan2(Wy,Wx)
+Considering a triangle formed between Joint 2 , Joint 3 and Wrist center as show in the figure we can find theta 2 and theta 3.
+
+![theta2-3][image_6]
 
 ## Project Implementation
 
