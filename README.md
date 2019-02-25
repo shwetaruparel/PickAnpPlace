@@ -10,7 +10,7 @@
 
 
 ## Kinematic Analysis
-#### Explored Forward Kinematics demo and evaluated the kr210.urdf.xacro file to perform kinematic analysis of Kuka KR210 robot and to derive its DH parameters.
+#### 1. Explored Forward Kinematics demo and evaluated the kr210.urdf.xacro file to perform kinematic analysis of Kuka KR210 robot and to derive its DH parameters.
 
 ![Joints and Links][image_1]
 
@@ -26,7 +26,7 @@ Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
 5->6 | -pi/2  | 0     | 0    | q6
 6->EE| 0      | 0     | 0.303| 0
 
-#### Individual Transform Matrices about each Joint
+#### 2. Individual Transform Matrices about each Joint
 
 1. Individual Transform matrix based on modified DH Parameters 
 
@@ -122,7 +122,7 @@ Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
   __T_Total= T6_EE * R_Corr__
 
 
-#### Decouple Inverse Kinematics Problem and derive equations to calculate all individual joint angles.
+#### 3. Decouple Inverse Kinematics Problem and derive equations to calculate all individual joint angles.
 
 Inverse kinematics (IK) is mainly the opposite idea of forwards kinematics. In this case,calculate the joint angles of the manipulatorare calculated based on the pose (i.e., position and orientation) of the end effector.
 
