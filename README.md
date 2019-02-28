@@ -189,14 +189,28 @@ __Theta 4,5,6 Calculations__
 __IK_debug.py and IK_server.py has been uploaded in the project folder__
 
 IK_debug.py is used to check -
+
 Total run time to calculate Joint angles from pose.
+
 Wrist center position error for x, y , z
+
 theta1,2,3,4,5,6 error
+
 End Effector position error.
+
 Check __Output.log__ to see calculated error values.
 
 IK_server.py is implemented to calclate IK Response.
-Finally , I did it after installing the ROS and creating workspace and reinstalling the Virtual machine multiple times.It is difficult to work with Windows and install VMware and havimg Virtual Machine. I couldnot see working of pick and place 10 times in a row, as the the Gazebo sometimes is very slow and it freezes sometimes too.`but I am pretty sure the code works fine 
-Based on the planned path determined by the ROS, calculate_ik service is requested to calculate the IK Response. IK_server.py calculate kinematics.
 
+Finally , I did it after installing the ROS and creating workspace and reinstalling the Virtual machine multiple times.It is difficult to work with Windows and install VMware and having Virtual Machine. I couldnot see working of pick and place 10 times in a row, as the the Gazebo sometimes is very slow and it freezes sometimes too,but I am pretty sure the code works fine. I have seen it working 2-3 times. 
+
+__Explanation of Code__
+
+Based on the planned path determined by the ROS, calculate_ik service is requested to calculate the IK Response. IK_server.py calculate the kinematics.
+
+Starts with DH Modified Parameter and individual Transformation  matrices.Homogenous transformation matrix is then calculated for base to gripper link.
+
+After that Rotation matrices about x, y and z axis are created. Also considering the mismatch between DH convention and Gazebo, Correction Matrix is created . This correction matrix is used to compensate for any errors in Transformation matrix and Rotaion matrix.
+
+A loop is run to 
                   
