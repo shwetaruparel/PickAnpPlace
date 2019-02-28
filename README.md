@@ -86,7 +86,7 @@ Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
 
   _l_ = end-effector length
 
-  Homogenous Rotaion Matrix are defined as
+  __Homogenous Rotaion Matrix along x,y,z axis are defined as__
 
   R_x = Matrix([    [1,     0,      0,      0],
                     [0,     cos(r), -sin(r),0],
