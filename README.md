@@ -186,6 +186,8 @@ __Theta 4,5,6 Calculations__
 
 ![Pick and Place][image_8]
 
+__IK_debug.py and IK_server.py has been uploaded in the project folder__
 
+Based on the planned path determined by the ROS, calculate_ik service is requested to calculate the IK Response. IK_server.py calculate kinematics
 
                   
