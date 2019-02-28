@@ -212,5 +212,15 @@ Starts with DH Modified Parameter and individual Transformation  matrices.Homoge
 
 After that Rotation matrices about x, y and z axis are created. Also considering the mismatch between DH convention and Gazebo, Correction Matrix is created . This correction matrix is used to compensate for any errors in Transformation matrix and Rotaion matrix.
 
-A loop is run to 
+A loop is run for the poses obtained from ROS for calculating the joint angles to be able to move in the determined path.
+
+To run the Gazebo and rviz run - __./safe_spawner.launch__  and in another xterm run the command- rosrun kuka arm IK_server.py . Press Next on eaxh stage and watch the fun.
+
+__Observations__
                   
+After we press Next , Each state message is dispalyed clearly on RViz tool. In Gazebo you can see the arm moving towards the determined path to pick the object place it in the bin.
+
+It happens perfectly atleast for 3 cycles. Gazebo freezes sometimes and it is difficult to run 10 cycles. But in each new cycle atleast 2 times it runs perfectly.
+
+I truly hope this will work.
+
